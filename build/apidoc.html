@@ -1,0 +1,2784 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/douglasduteil/isparta"
+
+    >isparta (v4.0.0)</a>
+</h1>
+<h4>A code coverage tool for ES6 (babel)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta">module isparta</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector">
+            function <span class="apidocSignatureSpan">isparta.</span>Collector
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.ContentWriter">
+            function <span class="apidocSignatureSpan">isparta.</span>ContentWriter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.FileWriter">
+            function <span class="apidocSignatureSpan">isparta.</span>FileWriter
+            <span class="apidocSignatureSpan">(sync)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Instrumenter">
+            function <span class="apidocSignatureSpan">isparta.</span>Instrumenter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report">
+            function <span class="apidocSignatureSpan">isparta.</span>Report
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Reporter">
+            function <span class="apidocSignatureSpan">isparta.</span>Reporter
+            <span class="apidocSignatureSpan">(cfg, dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store">
+            function <span class="apidocSignatureSpan">isparta.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.TreeSummarizer">
+            function <span class="apidocSignatureSpan">isparta.</span>TreeSummarizer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Writer">
+            function <span class="apidocSignatureSpan">isparta.</span>Writer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta._yuiLoadHook">
+            function <span class="apidocSignatureSpan">isparta.</span>_yuiLoadHook
+            <span class="apidocSignatureSpan">(matchFn, transformFn, verbose)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.matcherFor">
+            function <span class="apidocSignatureSpan">isparta.</span>matcherFor
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>Collector.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>ContentWriter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>FileWriter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>Report.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>Reporter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>Store.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>TreeSummarizer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>Writer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>hook</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>instrumenter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">isparta.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">isparta.</span>assetsDir</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Collector">module isparta.Collector</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector.Collector">
+            function <span class="apidocSignatureSpan">isparta.</span>Collector
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Collector.prototype">module isparta.Collector.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector.prototype.add">
+            function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>add
+            <span class="apidocSignatureSpan">(coverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector.prototype.dispose">
+            function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>dispose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector.prototype.fileCoverageFor">
+            function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>fileCoverageFor
+            <span class="apidocSignatureSpan">(fileName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector.prototype.files">
+            function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>files
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Collector.prototype.getFinalCoverage">
+            function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>getFinalCoverage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.ContentWriter">module isparta.ContentWriter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.ContentWriter.ContentWriter">
+            function <span class="apidocSignatureSpan">isparta.</span>ContentWriter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.ContentWriter.prototype">module isparta.ContentWriter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.ContentWriter.prototype.println">
+            function <span class="apidocSignatureSpan">isparta.ContentWriter.prototype.</span>println
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.ContentWriter.prototype.write">
+            function <span class="apidocSignatureSpan">isparta.ContentWriter.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.FileWriter">module isparta.FileWriter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.FileWriter.FileWriter">
+            function <span class="apidocSignatureSpan">isparta.</span>FileWriter
+            <span class="apidocSignatureSpan">(sync)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.FileWriter.super_">
+            function <span class="apidocSignatureSpan">isparta.FileWriter.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.FileWriter.prototype">module isparta.FileWriter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.FileWriter.prototype.copyFile">
+            function <span class="apidocSignatureSpan">isparta.FileWriter.prototype.</span>copyFile
+            <span class="apidocSignatureSpan">(source, dest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.FileWriter.prototype.done">
+            function <span class="apidocSignatureSpan">isparta.FileWriter.prototype.</span>done
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.FileWriter.prototype.writeFile">
+            function <span class="apidocSignatureSpan">isparta.FileWriter.prototype.</span>writeFile
+            <span class="apidocSignatureSpan">(file, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Report">module isparta.Report</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.Report">
+            function <span class="apidocSignatureSpan">isparta.</span>Report
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.create">
+            function <span class="apidocSignatureSpan">isparta.Report.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.getReportList">
+            function <span class="apidocSignatureSpan">isparta.Report.</span>getReportList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.loadAll">
+            function <span class="apidocSignatureSpan">isparta.Report.</span>loadAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.mix">
+            function <span class="apidocSignatureSpan">isparta.Report.</span>mix
+            <span class="apidocSignatureSpan">(cons, proto)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.register">
+            function <span class="apidocSignatureSpan">isparta.Report.</span>register
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.super_">
+            function <span class="apidocSignatureSpan">isparta.Report.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Report.prototype">module isparta.Report.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.prototype.getDefaultConfig">
+            function <span class="apidocSignatureSpan">isparta.Report.prototype.</span>getDefaultConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.prototype.synopsis">
+            function <span class="apidocSignatureSpan">isparta.Report.prototype.</span>synopsis
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Report.prototype.writeReport">
+            function <span class="apidocSignatureSpan">isparta.Report.prototype.</span>writeReport
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Reporter">module isparta.Reporter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Reporter.Reporter">
+            function <span class="apidocSignatureSpan">isparta.</span>Reporter
+            <span class="apidocSignatureSpan">(cfg, dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Reporter.prototype">module isparta.Reporter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Reporter.prototype.add">
+            function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>add
+            <span class="apidocSignatureSpan">(fmt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Reporter.prototype.addAll">
+            function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>addAll
+            <span class="apidocSignatureSpan">(fmts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Reporter.prototype.handleDone">
+            function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>handleDone
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Reporter.prototype.write">
+            function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>write
+            <span class="apidocSignatureSpan">(collector, sync, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Store">module isparta.Store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.Store">
+            function <span class="apidocSignatureSpan">isparta.</span>Store
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.create">
+            function <span class="apidocSignatureSpan">isparta.Store.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.getStoreList">
+            function <span class="apidocSignatureSpan">isparta.Store.</span>getStoreList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.loadAll">
+            function <span class="apidocSignatureSpan">isparta.Store.</span>loadAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.mix">
+            function <span class="apidocSignatureSpan">isparta.Store.</span>mix
+            <span class="apidocSignatureSpan">(cons, proto)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.register">
+            function <span class="apidocSignatureSpan">isparta.Store.</span>register
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Store.prototype">module isparta.Store.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.dispose">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>dispose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.get">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.getObject">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>getObject
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.hasKey">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>hasKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.keys">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>keys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.set">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>set
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Store.prototype.setObject">
+            function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>setObject
+            <span class="apidocSignatureSpan">(key, object)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.TreeSummarizer">module isparta.TreeSummarizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.TreeSummarizer.TreeSummarizer">
+            function <span class="apidocSignatureSpan">isparta.</span>TreeSummarizer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.TreeSummarizer.prototype">module isparta.TreeSummarizer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.TreeSummarizer.prototype.addFileCoverageSummary">
+            function <span class="apidocSignatureSpan">isparta.TreeSummarizer.prototype.</span>addFileCoverageSummary
+            <span class="apidocSignatureSpan">(filePath, metrics)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.TreeSummarizer.prototype.getTreeSummary">
+            function <span class="apidocSignatureSpan">isparta.TreeSummarizer.prototype.</span>getTreeSummary
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Writer">module isparta.Writer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Writer.Writer">
+            function <span class="apidocSignatureSpan">isparta.</span>Writer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Writer.super_">
+            function <span class="apidocSignatureSpan">isparta.Writer.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.Writer.prototype">module isparta.Writer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Writer.prototype.copyFile">
+            function <span class="apidocSignatureSpan">isparta.Writer.prototype.</span>copyFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Writer.prototype.done">
+            function <span class="apidocSignatureSpan">isparta.Writer.prototype.</span>done
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.Writer.prototype.writeFile">
+            function <span class="apidocSignatureSpan">isparta.Writer.prototype.</span>writeFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.config">module isparta.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.config.defaultConfig">
+            function <span class="apidocSignatureSpan">isparta.config.</span>defaultConfig
+            <span class="apidocSignatureSpan">(includeBackCompatAttrs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.config.loadFile">
+            function <span class="apidocSignatureSpan">isparta.config.</span>loadFile
+            <span class="apidocSignatureSpan">(file, overrides)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.config.loadObject">
+            function <span class="apidocSignatureSpan">isparta.config.</span>loadObject
+            <span class="apidocSignatureSpan">(obj, overrides)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.hook">module isparta.hook</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.hookCreateScript">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>hookCreateScript
+            <span class="apidocSignatureSpan">(matcher, transformer, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.hookRequire">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>hookRequire
+            <span class="apidocSignatureSpan">(matcher, transformer, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.hookRunInThisContext">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>hookRunInThisContext
+            <span class="apidocSignatureSpan">(matcher, transformer, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.unhookCreateScript">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>unhookCreateScript
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.unhookRequire">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>unhookRequire
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.unhookRunInThisContext">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>unhookRunInThisContext
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.hook.unloadRequireCache">
+            function <span class="apidocSignatureSpan">isparta.hook.</span>unloadRequireCache
+            <span class="apidocSignatureSpan">(matcher)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.instrumenter">module isparta.instrumenter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.instrumenter.Instrumenter">
+            function <span class="apidocSignatureSpan">isparta.instrumenter.</span>Instrumenter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.isparta.utils">module isparta.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.addDerivedInfo">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>addDerivedInfo
+            <span class="apidocSignatureSpan">(coverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.addDerivedInfoForFile">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>addDerivedInfoForFile
+            <span class="apidocSignatureSpan">(fileCoverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.blankSummary">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>blankSummary
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.incrementIgnoredTotals">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>incrementIgnoredTotals
+            <span class="apidocSignatureSpan">(cov)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.mergeFileCoverage">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>mergeFileCoverage
+            <span class="apidocSignatureSpan">(first, second)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.mergeSummaryObjects">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>mergeSummaryObjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.removeDerivedInfo">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>removeDerivedInfo
+            <span class="apidocSignatureSpan">(coverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.summarizeCoverage">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>summarizeCoverage
+            <span class="apidocSignatureSpan">(coverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.summarizeFileCoverage">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>summarizeFileCoverage
+            <span class="apidocSignatureSpan">(fileCoverage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.isparta.utils.toYUICoverage">
+            function <span class="apidocSignatureSpan">isparta.utils.</span>toYUICoverage
+            <span class="apidocSignatureSpan">(coverage)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta" id="apidoc.module.isparta">module isparta</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector" id="apidoc.element.isparta.Collector">
+        function <span class="apidocSignatureSpan">isparta.</span>Collector
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collector(options) {
+    options = options || {};
+    this.store = options.store || new MemoryStore();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.ContentWriter" id="apidoc.element.isparta.ContentWriter">
+        function <span class="apidocSignatureSpan">isparta.</span>ContentWriter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ContentWriter() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.FileWriter" id="apidoc.element.isparta.FileWriter">
+        function <span class="apidocSignatureSpan">isparta.</span>FileWriter
+        <span class="apidocSignatureSpan">(sync)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FileWriter(sync) {
+    Writer.call(this);
+    var that = this;
+    this.delegate = sync ? new SyncFileWriter() : new AsyncFileWriter();
+    this.delegate.on(&#x27;error&#x27;, function (err) { that.emit(&#x27;error&#x27;, err); });
+    this.delegate.on(&#x27;done&#x27;, function () { that.emit(&#x27;done&#x27;); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Instrumenter" id="apidoc.element.isparta.Instrumenter">
+        function <span class="apidocSignatureSpan">isparta.</span>Instrumenter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Instrumenter() {
+  var options = arguments.length &#x3c;= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  _classCallCheck(this, Instrumenter);
+
+  var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Instrumenter).call(this));
+
+  _istanbul2.default.Instrumenter.call(_this, options);
+
+  _this.babelOptions = _extends({
+    sourceMap: true
+  }, options &#x26;&#x26; options.babel || {});
+  return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report" id="apidoc.element.isparta.Report">
+        function <span class="apidocSignatureSpan">isparta.</span>Report
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Report() {
+    EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Reporter" id="apidoc.element.isparta.Reporter">
+        function <span class="apidocSignatureSpan">isparta.</span>Reporter
+        <span class="apidocSignatureSpan">(cfg, dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reporter(cfg, dir) {
+    this.config = cfg || configuration.loadFile();
+    this.dir = dir || this.config.reporting.dir();
+    this.reports = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store" id="apidoc.element.isparta.Store">
+        function <span class="apidocSignatureSpan">isparta.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.TreeSummarizer" id="apidoc.element.isparta.TreeSummarizer">
+        function <span class="apidocSignatureSpan">isparta.</span>TreeSummarizer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TreeSummarizer() {
+    this.summaryMap = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Writer" id="apidoc.element.isparta.Writer">
+        function <span class="apidocSignatureSpan">isparta.</span>Writer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writer() {
+    EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta._yuiLoadHook" id="apidoc.element.isparta._yuiLoadHook">
+        function <span class="apidocSignatureSpan">isparta.</span>_yuiLoadHook
+        <span class="apidocSignatureSpan">(matchFn, transformFn, verbose)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_yuiLoadHook = function (matchFn, transformFn, verbose) {
+    return function (file) {
+        if (!file.match(yuiRegexp)) {
+            return;
+        }
+        var YMain = require(file),
+            YUI,
+            loaderFn,
+            origGet;
+
+        if (YMain.YUI) {
+            YUI = YMain.YUI;
+            loaderFn = YUI.Env &#x26;&#x26; YUI.Env.mods &#x26;&#x26; YUI.Env.mods[&#x27;loader-base&#x27;] ? YUI.Env.mods[&#x27;loader-base&#x27;].fn : null;
+            if (!loaderFn) { return; }
+            if (verbose) { console.log(&#x27;Applying YUI load post-hook&#x27;); }
+            YUI.Env.mods[&#x27;loader-base&#x27;].fn = function (Y) {
+                loaderFn.call(null, Y);
+                origGet = Y.Get._exec;
+                Y.Get._exec = function (data, url, cb) {
+                    if (matchFn(url) || matchFn(path.resolve(url))) { //allow for relative paths as well
+                        if (verbose) {
+                            console.log(&#x27;Transforming [&#x27; + url + &#x27;]&#x27;);
+                        }
+                        try {
+                            data = transformFn(data, url);
+                        } catch (ex) {
+                            console.error(&#x27;Error transforming: &#x27; + url + &#x27; return original code&#x27;);
+                            console.error(ex.message || ex);
+                            if (ex.stack) { console.error(ex.stack); }
+                        }
+                    }
+                    return origGet.call(Y, data, url, cb);
+                };
+                return Y;
+            };
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.matcherFor" id="apidoc.element.isparta.matcherFor">
+        function <span class="apidocSignatureSpan">isparta.</span>matcherFor
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function matcherFor(options, callback) {
+
+    if (!callback &#x26;&#x26; typeof options === &#x27;function&#x27;) {
+        callback = options;
+        options = null;
+    }
+    options = options || {};
+    options.relative = false; //force absolute paths
+    options.realpath = true; //force real paths (to match Node.js module paths)
+
+    filesFor(options, function (err, files) {
+        var fileMap = {},
+            matchFn;
+        if (err) { return callback(err); }
+        files.forEach(function (file) { fileMap[file] = true; });
+
+        matchFn = function (file) { return fileMap[file]; };
+        matchFn.files = Object.keys(fileMap);
+        return callback(null, matchFn);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Collector" id="apidoc.module.isparta.Collector">module isparta.Collector</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector.Collector" id="apidoc.element.isparta.Collector.Collector">
+        function <span class="apidocSignatureSpan">isparta.</span>Collector
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collector(options) {
+    options = options || {};
+    this.store = options.store || new MemoryStore();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Collector.prototype" id="apidoc.module.isparta.Collector.prototype">module isparta.Collector.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector.prototype.add" id="apidoc.element.isparta.Collector.prototype.add">
+        function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>add
+        <span class="apidocSignatureSpan">(coverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (coverage) {
+    var store = this.store;
+    Object.keys(coverage).forEach(function (key) {
+        var fileCoverage = coverage[key];
+        if (store.hasKey(key)) {
+            store.setObject(key, utils.mergeFileCoverage(fileCoverage, store.getObject(key)));
+        } else {
+            store.setObject(key, fileCoverage);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector.prototype.dispose" id="apidoc.element.isparta.Collector.prototype.dispose">
+        function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>dispose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispose = function () {
+    this.store.dispose();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector.prototype.fileCoverageFor" id="apidoc.element.isparta.Collector.prototype.fileCoverageFor">
+        function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>fileCoverageFor
+        <span class="apidocSignatureSpan">(fileName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileCoverageFor = function (fileName) {
+    var ret = this.store.getObject(fileName);
+    utils.addDerivedInfoForFile(ret);
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector.prototype.files" id="apidoc.element.isparta.Collector.prototype.files">
+        function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>files
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">files = function () {
+    return this.store.keys();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Collector.prototype.getFinalCoverage" id="apidoc.element.isparta.Collector.prototype.getFinalCoverage">
+        function <span class="apidocSignatureSpan">isparta.Collector.prototype.</span>getFinalCoverage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFinalCoverage = function () {
+    var ret = {},
+        that = this;
+    this.files().forEach(function (file) {
+        ret[file] = that.fileCoverageFor(file);
+    });
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.ContentWriter" id="apidoc.module.isparta.ContentWriter">module isparta.ContentWriter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.ContentWriter.ContentWriter" id="apidoc.element.isparta.ContentWriter.ContentWriter">
+        function <span class="apidocSignatureSpan">isparta.</span>ContentWriter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ContentWriter() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.ContentWriter.prototype" id="apidoc.module.isparta.ContentWriter.prototype">module isparta.ContentWriter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.ContentWriter.prototype.println" id="apidoc.element.isparta.ContentWriter.prototype.println">
+        function <span class="apidocSignatureSpan">isparta.ContentWriter.prototype.</span>println
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">println = function (str) { this.write(str + &#x27;\n&#x27;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.ContentWriter.prototype.write" id="apidoc.element.isparta.ContentWriter.prototype.write">
+        function <span class="apidocSignatureSpan">isparta.ContentWriter.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function () {
+    throw new Error(&#x27;write: must be overridden&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.FileWriter" id="apidoc.module.isparta.FileWriter">module isparta.FileWriter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.FileWriter.FileWriter" id="apidoc.element.isparta.FileWriter.FileWriter">
+        function <span class="apidocSignatureSpan">isparta.</span>FileWriter
+        <span class="apidocSignatureSpan">(sync)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FileWriter(sync) {
+    Writer.call(this);
+    var that = this;
+    this.delegate = sync ? new SyncFileWriter() : new AsyncFileWriter();
+    this.delegate.on(&#x27;error&#x27;, function (err) { that.emit(&#x27;error&#x27;, err); });
+    this.delegate.on(&#x27;done&#x27;, function () { that.emit(&#x27;done&#x27;); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.FileWriter.super_" id="apidoc.element.isparta.FileWriter.super_">
+        function <span class="apidocSignatureSpan">isparta.FileWriter.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writer() {
+    EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.FileWriter.prototype" id="apidoc.module.isparta.FileWriter.prototype">module isparta.FileWriter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.FileWriter.prototype.copyFile" id="apidoc.element.isparta.FileWriter.prototype.copyFile">
+        function <span class="apidocSignatureSpan">isparta.FileWriter.prototype.</span>copyFile
+        <span class="apidocSignatureSpan">(source, dest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFile = function (source, dest) {
+    mkdirp.sync(path.dirname(dest));
+    fs.writeFileSync(dest, fs.readFileSync(source));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.FileWriter.prototype.done" id="apidoc.element.isparta.FileWriter.prototype.done">
+        function <span class="apidocSignatureSpan">isparta.FileWriter.prototype.</span>done
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function () {
+    this.delegate.done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.FileWriter.prototype.writeFile" id="apidoc.element.isparta.FileWriter.prototype.writeFile">
+        function <span class="apidocSignatureSpan">isparta.FileWriter.prototype.</span>writeFile
+        <span class="apidocSignatureSpan">(file, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFile = function (file, callback) {
+    this.delegate.writeFile(file, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Report" id="apidoc.module.isparta.Report">module isparta.Report</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.Report" id="apidoc.element.isparta.Report.Report">
+        function <span class="apidocSignatureSpan">isparta.</span>Report
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Report() {
+    EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.create" id="apidoc.element.isparta.Report.create">
+        function <span class="apidocSignatureSpan">isparta.Report.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function _interopRequireDefault(obj) { return obj &#x26;&#x26; obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(&#x22;Cannot call
+ a class as a function&#x22;); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(&#x22;this hasn&#x27;t been initialised -
+super() hasn&#x27;t been called&#x22;); } return call &#x26;&#x26; (typeof call === &#x22;object&#x22; || typeof call === &#x22;
+function&#x22;) ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== &#x22;function&#x22; &#x26;&#x26; superClass !== null) { throw
+ new TypeError(&#x22;Super expression must either be null or a function, not &#x22; + typeof superClass); } subClass.prototype =
+Object.<span class="apidocCodeKeywordSpan">create</span>(superClass &#x26;&#x26; superClass.prototype, { constructor: { value: subClass
+, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass
+, superClass) : subClass.__proto__ = superClass; } //
+
+var POSITIONS = [&#x27;start&#x27;, &#x27;end&#x27;];
+
+var Instrumenter = exports.Instrumenter = (function (_istanbul$Instrumente) {
+_inherits(Instrumenter, _istanbul$Instrumente);
+
+function Instrumenter() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.getReportList" id="apidoc.element.isparta.Report.getReportList">
+        function <span class="apidocSignatureSpan">isparta.Report.</span>getReportList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getReportList = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.loadAll" id="apidoc.element.isparta.Report.loadAll">
+        function <span class="apidocSignatureSpan">isparta.Report.</span>loadAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadAll = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.mix" id="apidoc.element.isparta.Report.mix">
+        function <span class="apidocSignatureSpan">isparta.Report.</span>mix
+        <span class="apidocSignatureSpan">(cons, proto)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mix = function (cons, proto) {
+    Object.keys(proto).forEach(function (key) {
+        cons.prototype[key] = proto[key];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.register" id="apidoc.element.isparta.Report.register">
+        function <span class="apidocSignatureSpan">isparta.Report.</span>register
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.super_" id="apidoc.element.isparta.Report.super_">
+        function <span class="apidocSignatureSpan">isparta.Report.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Report.prototype" id="apidoc.module.isparta.Report.prototype">module isparta.Report.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.prototype.getDefaultConfig" id="apidoc.element.isparta.Report.prototype.getDefaultConfig">
+        function <span class="apidocSignatureSpan">isparta.Report.prototype.</span>getDefaultConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefaultConfig = function () {
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.prototype.synopsis" id="apidoc.element.isparta.Report.prototype.synopsis">
+        function <span class="apidocSignatureSpan">isparta.Report.prototype.</span>synopsis
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">synopsis = function () {
+    throw new Error(&#x27;synopsis must be overridden&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Report.prototype.writeReport" id="apidoc.element.isparta.Report.prototype.writeReport">
+        function <span class="apidocSignatureSpan">isparta.Report.prototype.</span>writeReport
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeReport = function () {
+    throw new Error(&#x27;writeReport: must be overridden&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Reporter" id="apidoc.module.isparta.Reporter">module isparta.Reporter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Reporter.Reporter" id="apidoc.element.isparta.Reporter.Reporter">
+        function <span class="apidocSignatureSpan">isparta.</span>Reporter
+        <span class="apidocSignatureSpan">(cfg, dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reporter(cfg, dir) {
+    this.config = cfg || configuration.loadFile();
+    this.dir = dir || this.config.reporting.dir();
+    this.reports = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Reporter.prototype" id="apidoc.module.isparta.Reporter.prototype">module isparta.Reporter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Reporter.prototype.add" id="apidoc.element.isparta.Reporter.prototype.add">
+        function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>add
+        <span class="apidocSignatureSpan">(fmt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (fmt) {
+    if (this.reports[fmt]) { // already added
+        return;
+    }
+    var config = this.config,
+        rptConfig = config.reporting.reportConfig()[fmt] || {};
+    rptConfig.verbose = config.verbose;
+    rptConfig.dir = this.dir;
+    rptConfig.watermarks = config.reporting.watermarks();
+    try {
+        this.reports[fmt] = Report.create(fmt, rptConfig);
+    } catch (ex) {
+        throw inputError.create(&#x27;Invalid report format [&#x27; + fmt + &#x27;]&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Reporter.prototype.addAll" id="apidoc.element.isparta.Reporter.prototype.addAll">
+        function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>addAll
+        <span class="apidocSignatureSpan">(fmts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addAll = function (fmts) {
+    var that = this;
+    fmts.forEach(function (f) {
+        that.add(f);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Reporter.prototype.handleDone" id="apidoc.element.isparta.Reporter.prototype.handleDone">
+        function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>handleDone
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleDone = function (callback) {
+    this.inProgress -= 1;
+    if (this.inProgress === 0) {
+        return callback();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Reporter.prototype.write" id="apidoc.element.isparta.Reporter.prototype.write">
+        function <span class="apidocSignatureSpan">isparta.Reporter.prototype.</span>write
+        <span class="apidocSignatureSpan">(collector, sync, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (collector, sync, callback) {
+    var reports = this.reports,
+        verbose = this.config.verbose,
+        handler = this.handleDone.bind(this, callback);
+
+    this.inProgress = Object.keys(reports).length;
+
+    Object.keys(reports).forEach(function (name) {
+        var report = reports[name];
+        if (verbose) {
+            console.error(&#x27;Write report: &#x27; + name);
+        }
+        report.on(&#x27;done&#x27;, handler);
+        report.writeReport(collector, sync);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Store" id="apidoc.module.isparta.Store">module isparta.Store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.Store" id="apidoc.element.isparta.Store.Store">
+        function <span class="apidocSignatureSpan">isparta.</span>Store
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Store() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.create" id="apidoc.element.isparta.Store.create">
+        function <span class="apidocSignatureSpan">isparta.Store.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function _interopRequireDefault(obj) { return obj &#x26;&#x26; obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(&#x22;Cannot call
+ a class as a function&#x22;); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(&#x22;this hasn&#x27;t been initialised -
+super() hasn&#x27;t been called&#x22;); } return call &#x26;&#x26; (typeof call === &#x22;object&#x22; || typeof call === &#x22;
+function&#x22;) ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== &#x22;function&#x22; &#x26;&#x26; superClass !== null) { throw
+ new TypeError(&#x22;Super expression must either be null or a function, not &#x22; + typeof superClass); } subClass.prototype =
+Object.<span class="apidocCodeKeywordSpan">create</span>(superClass &#x26;&#x26; superClass.prototype, { constructor: { value: subClass
+, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass
+, superClass) : subClass.__proto__ = superClass; } //
+
+var POSITIONS = [&#x27;start&#x27;, &#x27;end&#x27;];
+
+var Instrumenter = exports.Instrumenter = (function (_istanbul$Instrumente) {
+_inherits(Instrumenter, _istanbul$Instrumente);
+
+function Instrumenter() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.getStoreList" id="apidoc.element.isparta.Store.getStoreList">
+        function <span class="apidocSignatureSpan">isparta.Store.</span>getStoreList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getStoreList = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.loadAll" id="apidoc.element.isparta.Store.loadAll">
+        function <span class="apidocSignatureSpan">isparta.Store.</span>loadAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadAll = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.mix" id="apidoc.element.isparta.Store.mix">
+        function <span class="apidocSignatureSpan">isparta.Store.</span>mix
+        <span class="apidocSignatureSpan">(cons, proto)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mix = function (cons, proto) {
+    Object.keys(proto).forEach(function (key) {
+        cons.prototype[key] = proto[key];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.register" id="apidoc.element.isparta.Store.register">
+        function <span class="apidocSignatureSpan">isparta.Store.</span>register
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Store.prototype" id="apidoc.module.isparta.Store.prototype">module isparta.Store.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.dispose" id="apidoc.element.isparta.Store.prototype.dispose">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>dispose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispose = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.get" id="apidoc.element.isparta.Store.prototype.get">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function () { throw new Error(&#x22;get: must be overridden&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.getObject" id="apidoc.element.isparta.Store.prototype.getObject">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>getObject
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getObject = function (key) {
+    return JSON.parse(this.get(key));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.hasKey" id="apidoc.element.isparta.Store.prototype.hasKey">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>hasKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasKey = function () { throw new Error(&#x22;hasKey: must be overridden&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.keys" id="apidoc.element.isparta.Store.prototype.keys">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>keys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keys = function () { throw new Error(&#x22;keys: must be overridden&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ////
+
+  }, {
+    key: &#x27;_statementMapTransformer&#x27;,
+    value: function _statementMapTransformer(metrics) {
+      var _this3 = this;
+
+      return Object.<span class="apidocCodeKeywordSpan">keys</span>(metrics).map(function (index) {
+return metrics[index];
+      }).map(function (statementMeta) {
+var _getMetricOriginalLoc = _this3._getMetricOriginalLocations([statementMeta]);
+
+var _getMetricOriginalLoc2 = _slicedToArray(_getMetricOriginalLoc, 1);
+
+var location = _getMetricOriginalLoc2[0];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.set" id="apidoc.element.isparta.Store.prototype.set">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>set
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function () { throw new Error(&#x22;set: must be overridden&#x22;); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Store.prototype.setObject" id="apidoc.element.isparta.Store.prototype.setObject">
+        function <span class="apidocSignatureSpan">isparta.Store.prototype.</span>setObject
+        <span class="apidocSignatureSpan">(key, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setObject = function (key, object) {
+    return this.set(key, JSON.stringify(object));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.TreeSummarizer" id="apidoc.module.isparta.TreeSummarizer">module isparta.TreeSummarizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.TreeSummarizer.TreeSummarizer" id="apidoc.element.isparta.TreeSummarizer.TreeSummarizer">
+        function <span class="apidocSignatureSpan">isparta.</span>TreeSummarizer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TreeSummarizer() {
+    this.summaryMap = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.TreeSummarizer.prototype" id="apidoc.module.isparta.TreeSummarizer.prototype">module isparta.TreeSummarizer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.TreeSummarizer.prototype.addFileCoverageSummary" id="apidoc.element.isparta.TreeSummarizer.prototype.addFileCoverageSummary">
+        function <span class="apidocSignatureSpan">isparta.TreeSummarizer.prototype.</span>addFileCoverageSummary
+        <span class="apidocSignatureSpan">(filePath, metrics)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addFileCoverageSummary = function (filePath, metrics) {
+    this.summaryMap[filePath] = metrics;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.TreeSummarizer.prototype.getTreeSummary" id="apidoc.element.isparta.TreeSummarizer.prototype.getTreeSummary">
+        function <span class="apidocSignatureSpan">isparta.TreeSummarizer.prototype.</span>getTreeSummary
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTreeSummary = function () {
+    var commonArrayPrefix = findCommonArrayPrefix(Object.keys(this.summaryMap));
+    return new TreeSummary(this.summaryMap, commonArrayPrefix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Writer" id="apidoc.module.isparta.Writer">module isparta.Writer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Writer.Writer" id="apidoc.element.isparta.Writer.Writer">
+        function <span class="apidocSignatureSpan">isparta.</span>Writer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Writer() {
+    EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Writer.super_" id="apidoc.element.isparta.Writer.super_">
+        function <span class="apidocSignatureSpan">isparta.Writer.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.Writer.prototype" id="apidoc.module.isparta.Writer.prototype">module isparta.Writer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Writer.prototype.copyFile" id="apidoc.element.isparta.Writer.prototype.copyFile">
+        function <span class="apidocSignatureSpan">isparta.Writer.prototype.</span>copyFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyFile = function () {
+    throw new Error(&#x27;copyFile: must be overridden&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Writer.prototype.done" id="apidoc.element.isparta.Writer.prototype.done">
+        function <span class="apidocSignatureSpan">isparta.Writer.prototype.</span>done
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function () {
+    throw new Error(&#x27;done: must be overridden&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.Writer.prototype.writeFile" id="apidoc.element.isparta.Writer.prototype.writeFile">
+        function <span class="apidocSignatureSpan">isparta.Writer.prototype.</span>writeFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFile = function () {
+    throw new Error(&#x27;writeFile: must be overridden&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.config" id="apidoc.module.isparta.config">module isparta.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.config.defaultConfig" id="apidoc.element.isparta.config.defaultConfig">
+        function <span class="apidocSignatureSpan">isparta.config.</span>defaultConfig
+        <span class="apidocSignatureSpan">(includeBackCompatAttrs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultConfig(includeBackCompatAttrs) {
+    var ret = {
+        verbose: false,
+        instrumentation: {
+            root: &#x27;.&#x27;,
+            extensions: [&#x27;.js&#x27;],
+            &#x27;default-excludes&#x27;: true,
+            excludes: [],
+            &#x27;embed-source&#x27;: false,
+            variable: &#x27;__coverage__&#x27;,
+            compact: true,
+            &#x27;preserve-comments&#x27;: false,
+            &#x27;complete-copy&#x27;: false,
+            &#x27;save-baseline&#x27;: false,
+            &#x27;baseline-file&#x27;: &#x27;./coverage/coverage-baseline.json&#x27;,
+            &#x27;include-all-sources&#x27;: false,
+            &#x27;include-pid&#x27;: false,
+            &#x27;es-modules&#x27;: false
+        },
+        reporting: {
+            print: &#x27;summary&#x27;,
+            reports: [ &#x27;lcov&#x27; ],
+            dir: &#x27;./coverage&#x27;
+        },
+        hooks: {
+            &#x27;hook-run-in-context&#x27;: false,
+            &#x27;post-require-hook&#x27;: null,
+            &#x27;handle-sigint&#x27;: false
+        },
+        check: {
+            global: {
+                statements: 0,
+                lines: 0,
+                branches: 0,
+                functions: 0,
+                excludes: [] // Currently list of files (root + path). For future, extend to patterns.
+            },
+            each: {
+                statements: 0,
+                lines: 0,
+                branches: 0,
+                functions: 0,
+                excludes: []
+            }
+        }
+    };
+    ret.reporting.watermarks = defaults.watermarks();
+    ret.reporting[&#x27;report-config&#x27;] = defaults.defaultReportConfig();
+
+    if (includeBackCompatAttrs) {
+        ret.instrumentation[&#x27;preload-sources&#x27;] = false;
+    }
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.config.loadFile" id="apidoc.element.isparta.config.loadFile">
+        function <span class="apidocSignatureSpan">isparta.config.</span>loadFile
+        <span class="apidocSignatureSpan">(file, overrides)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadFile(file, overrides) {
+    var defaultConfigFile = path.resolve(&#x27;.istanbul.yml&#x27;),
+        configObject;
+
+    if (file) {
+        if (!existsSync(file)) {
+            throw new Error(&#x27;Invalid configuration file specified:&#x27; + file);
+        }
+    } else {
+        if (existsSync(defaultConfigFile)) {
+            file = defaultConfigFile;
+        }
+    }
+
+    if (file) {
+        if (overrides &#x26;&#x26; overrides.verbose === true) {
+            console.error(&#x27;Loading config: &#x27; + file);
+        }
+        configObject = file.match(YML_PATTERN) ?
+            yaml.safeLoad(fs.readFileSync(file, &#x27;utf8&#x27;), { filename: file }) :
+            require(path.resolve(file));
+    }
+
+    return new Configuration(configObject, overrides);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.config.loadObject" id="apidoc.element.isparta.config.loadObject">
+        function <span class="apidocSignatureSpan">isparta.config.</span>loadObject
+        <span class="apidocSignatureSpan">(obj, overrides)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadObject(obj, overrides) {
+    return new Configuration(obj, overrides);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.hook" id="apidoc.module.isparta.hook">module isparta.hook</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.hookCreateScript" id="apidoc.element.isparta.hook.hookCreateScript">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>hookCreateScript
+        <span class="apidocSignatureSpan">(matcher, transformer, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hookCreateScript(matcher, transformer, opts) {
+    opts = opts || {};
+    var fn = transformFn(matcher, transformer, opts.verbose);
+    vm.createScript = function (code, file) {
+        var ret = fn(code, file);
+        return originalCreateScript(ret.code, file);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.hookRequire" id="apidoc.element.isparta.hook.hookRequire">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>hookRequire
+        <span class="apidocSignatureSpan">(matcher, transformer, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hookRequire(matcher, transformer, options) {
+    options = options || {};
+    var extensions,
+        fn = transformFn(matcher, transformer, options.verbose),
+        postLoadHook = options.postLoadHook &#x26;&#x26;
+            typeof options.postLoadHook === &#x27;function&#x27; ? options.postLoadHook : null;
+
+    extensions = options.extensions || [&#x27;.js&#x27;];
+
+    extensions.forEach(function(ext){
+        if (!(ext in originalLoaders)) {
+            originalLoaders[ext] = Module._extensions[ext] || Module._extensions[&#x27;.js&#x27;];
+        }
+        Module._extensions[ext] = function (module, filename) {
+            var ret = fn(fs.readFileSync(filename, &#x27;utf8&#x27;), filename);
+            if (ret.changed) {
+                module._compile(ret.code, filename);
+            } else {
+                originalLoaders[ext](module, filename);
+            }
+            if (postLoadHook) {
+                postLoadHook(filename);
+            }
+        };
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.hookRunInThisContext" id="apidoc.element.isparta.hook.hookRunInThisContext">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>hookRunInThisContext
+        <span class="apidocSignatureSpan">(matcher, transformer, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hookRunInThisContext(matcher, transformer, opts) {
+    opts = opts || {};
+    var fn = transformFn(matcher, transformer, opts.verbose);
+    vm.runInThisContext = function (code, file) {
+        var ret = fn(code, file);
+        return originalRunInThisContext(ret.code, file);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.unhookCreateScript" id="apidoc.element.isparta.hook.unhookCreateScript">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>unhookCreateScript
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unhookCreateScript() {
+    vm.createScript = originalCreateScript;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.unhookRequire" id="apidoc.element.isparta.hook.unhookRequire">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>unhookRequire
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unhookRequire() {
+    Object.keys(originalLoaders).forEach(function(ext) {
+        Module._extensions[ext] = originalLoaders[ext];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.unhookRunInThisContext" id="apidoc.element.isparta.hook.unhookRunInThisContext">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>unhookRunInThisContext
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unhookRunInThisContext() {
+    vm.runInThisContext = originalRunInThisContext;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.hook.unloadRequireCache" id="apidoc.element.isparta.hook.unloadRequireCache">
+        function <span class="apidocSignatureSpan">isparta.hook.</span>unloadRequireCache
+        <span class="apidocSignatureSpan">(matcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unloadRequireCache(matcher) {
+    if (matcher &#x26;&#x26; typeof require !== &#x27;undefined&#x27; &#x26;&#x26; require &#x26;&#x26; require.cache) {
+        Object.keys(require.cache).forEach(function (filename) {
+            if (matcher(filename)) {
+                delete require.cache[filename];
+            }
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.instrumenter" id="apidoc.module.isparta.instrumenter">module isparta.instrumenter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.instrumenter.Instrumenter" id="apidoc.element.isparta.instrumenter.Instrumenter">
+        function <span class="apidocSignatureSpan">isparta.instrumenter.</span>Instrumenter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Instrumenter() {
+  var options = arguments.length &#x3c;= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  _classCallCheck(this, Instrumenter);
+
+  var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Instrumenter).call(this));
+
+  _istanbul2.default.Instrumenter.call(_this, options);
+
+  _this.babelOptions = _extends({
+    sourceMap: true
+  }, options &#x26;&#x26; options.babel || {});
+  return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.isparta.utils" id="apidoc.module.isparta.utils">module isparta.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.addDerivedInfo" id="apidoc.element.isparta.utils.addDerivedInfo">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>addDerivedInfo
+        <span class="apidocSignatureSpan">(coverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addDerivedInfo(coverage) {
+    Object.keys(coverage).forEach(function (k) {
+        addDerivedInfoForFile(coverage[k]);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.addDerivedInfoForFile" id="apidoc.element.isparta.utils.addDerivedInfoForFile">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>addDerivedInfoForFile
+        <span class="apidocSignatureSpan">(fileCoverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addDerivedInfoForFile(fileCoverage) {
+    var statementMap = fileCoverage.statementMap,
+        statements = fileCoverage.s,
+        lineMap;
+
+    if (!fileCoverage.l) {
+        fileCoverage.l = lineMap = {};
+        Object.keys(statements).forEach(function (st) {
+            var line = statementMap[st].start.line,
+                count = statements[st],
+                prevVal = lineMap[line];
+            if (count === 0 &#x26;&#x26; statementMap[st].skip) { count = 1; }
+            if (typeof prevVal === &#x27;undefined&#x27; || prevVal &#x3c; count) {
+                lineMap[line] = count;
+            }
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.blankSummary" id="apidoc.element.isparta.utils.blankSummary">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>blankSummary
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function blankSummary() {
+    return {
+        lines: {
+            total: 0,
+            covered: 0,
+            skipped: 0,
+            pct: &#x27;Unknown&#x27;
+        },
+        statements: {
+            total: 0,
+            covered: 0,
+            skipped: 0,
+            pct: &#x27;Unknown&#x27;
+        },
+        functions: {
+            total: 0,
+            covered: 0,
+            skipped: 0,
+            pct: &#x27;Unknown&#x27;
+        },
+        branches: {
+            total: 0,
+            covered: 0,
+            skipped: 0,
+            pct: &#x27;Unknown&#x27;
+        },
+        linesCovered: {}
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.incrementIgnoredTotals" id="apidoc.element.isparta.utils.incrementIgnoredTotals">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>incrementIgnoredTotals
+        <span class="apidocSignatureSpan">(cov)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function incrementIgnoredTotals(cov) {
+    //TODO: This may be slow in the browser and may break in older browsers
+    //      Look into using a library that works in Node and the browser
+    var fileCoverage = JSON.parse(JSON.stringify(cov));
+
+    [
+        {mapKey: &#x27;statementMap&#x27;, hitsKey: &#x27;s&#x27;},
+        {mapKey: &#x27;branchMap&#x27;, hitsKey: &#x27;b&#x27;},
+        {mapKey: &#x27;fnMap&#x27;, hitsKey: &#x27;f&#x27;}
+    ].forEach(function (keys) {
+        Object.keys(fileCoverage[keys.mapKey])
+            .forEach(function (key) {
+                var map = fileCoverage[keys.mapKey][key];
+                var hits = fileCoverage[keys.hitsKey];
+
+                if (keys.mapKey === &#x27;branchMap&#x27;) {
+                    var locations = map.locations;
+
+                    locations.forEach(function (location, index) {
+                        if (hits[key][index] === 0 &#x26;&#x26; location.skip) {
+                            hits[key][index] = 1;
+                        }
+                    });
+
+                    return;
+                }
+
+                if (hits[key] === 0 &#x26;&#x26; map.skip) {
+                    hits[key] = 1;
+                }
+            });
+        });
+
+    return fileCoverage;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.mergeFileCoverage" id="apidoc.element.isparta.utils.mergeFileCoverage">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>mergeFileCoverage
+        <span class="apidocSignatureSpan">(first, second)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mergeFileCoverage(first, second) {
+    var ret = JSON.parse(JSON.stringify(first)),
+        i;
+
+    delete ret.l; //remove derived info
+
+    Object.keys(second.s).forEach(function (k) {
+        ret.s[k] += second.s[k];
+    });
+    Object.keys(second.f).forEach(function (k) {
+        ret.f[k] += second.f[k];
+    });
+    Object.keys(second.b).forEach(function (k) {
+        var retArray = ret.b[k],
+            secondArray = second.b[k];
+        for (i = 0; i &#x3c; retArray.length; i += 1) {
+            retArray[i] += secondArray[i];
+        }
+    });
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.mergeSummaryObjects" id="apidoc.element.isparta.utils.mergeSummaryObjects">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>mergeSummaryObjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mergeSummaryObjects() {
+    var ret = blankSummary(),
+        args = Array.prototype.slice.call(arguments),
+        keys = [&#x27;lines&#x27;, &#x27;statements&#x27;, &#x27;branches&#x27;, &#x27;functions&#x27;],
+        increment = function (obj) {
+            if (obj) {
+                keys.forEach(function (key) {
+                    ret[key].total += obj[key].total;
+                    ret[key].covered += obj[key].covered;
+                    ret[key].skipped += obj[key].skipped;
+                });
+
+                // keep track of all lines we have coverage for.
+                Object.keys(obj.linesCovered).forEach(function (key) {
+                    if (!ret.linesCovered[key]) {
+                        ret.linesCovered[key] = obj.linesCovered[key];
+                    } else {
+                        ret.linesCovered[key] += obj.linesCovered[key];
+                    }
+                });
+            }
+        };
+    args.forEach(function (arg) {
+        increment(arg);
+    });
+    keys.forEach(function (key) {
+        ret[key].pct = percent(ret[key].covered, ret[key].total);
+    });
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.removeDerivedInfo" id="apidoc.element.isparta.utils.removeDerivedInfo">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>removeDerivedInfo
+        <span class="apidocSignatureSpan">(coverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeDerivedInfo(coverage) {
+    Object.keys(coverage).forEach(function (k) {
+        delete coverage[k].l;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.summarizeCoverage" id="apidoc.element.isparta.utils.summarizeCoverage">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>summarizeCoverage
+        <span class="apidocSignatureSpan">(coverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function summarizeCoverage(coverage) {
+    var fileSummary = [];
+    Object.keys(coverage).forEach(function (key) {
+        fileSummary.push(summarizeFileCoverage(coverage[key]));
+    });
+    return mergeSummaryObjects.apply(null, fileSummary);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.summarizeFileCoverage" id="apidoc.element.isparta.utils.summarizeFileCoverage">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>summarizeFileCoverage
+        <span class="apidocSignatureSpan">(fileCoverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function summarizeFileCoverage(fileCoverage) {
+    var ret = blankSummary();
+    addDerivedInfoForFile(fileCoverage);
+    ret.lines = computeSimpleTotals(fileCoverage, &#x27;l&#x27;);
+    ret.functions = computeSimpleTotals(fileCoverage, &#x27;f&#x27;, &#x27;fnMap&#x27;);
+    ret.statements = computeSimpleTotals(fileCoverage, &#x27;s&#x27;, &#x27;statementMap&#x27;);
+    ret.branches = computeBranchTotals(fileCoverage);
+    ret.linesCovered = fileCoverage.l;
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.isparta.utils.toYUICoverage" id="apidoc.element.isparta.utils.toYUICoverage">
+        function <span class="apidocSignatureSpan">isparta.utils.</span>toYUICoverage
+        <span class="apidocSignatureSpan">(coverage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toYUICoverage(coverage) {
+    var ret = {};
+
+    addDerivedInfo(coverage);
+
+    Object.keys(coverage).forEach(function (k) {
+        var fileCoverage = coverage[k],
+            lines = fileCoverage.l,
+            functions = fileCoverage.f,
+            fnMap = fileCoverage.fnMap,
+            o;
+
+        o = ret[k] = {
+            lines: {},
+            calledLines: 0,
+            coveredLines: 0,
+            functions: {},
+            calledFunctions: 0,
+            coveredFunctions: 0
+        };
+        Object.keys(lines).forEach(function (k) {
+            o.lines[k] = lines[k];
+            o.coveredLines += 1;
+            if (lines[k] &#x3e; 0) {
+                o.calledLines += 1;
+            }
+        });
+        Object.keys(functions).forEach(function (k) {
+            var name = fnMap[k].name + &#x27;:&#x27; + fnMap[k].line;
+            o.functions[name] = functions[k];
+            o.coveredFunctions += 1;
+            if (functions[k] &#x3e; 0) {
+                o.calledFunctions += 1;
+            }
+        });
+    });
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
